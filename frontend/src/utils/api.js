@@ -78,9 +78,8 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://mesto.nomoreparties.co./v1/cohort-50/',
+  url: 'https://api.andreymorogin.mesto.nomoredomains.rocks/',
   headers: {
-		authorization: '869fd84c-8f33-41d3-abfa-9b98ecd7be14',
     'Content-Type': 'application/json'
   },
 });
