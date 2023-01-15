@@ -1,7 +1,6 @@
 class Api {
   constructor(options) {
     this._url = options.url;
-    this._headers = options.headers;
   }
 
   _checkResponse(res) {
@@ -13,14 +12,20 @@ class Api {
 
   getUserInfo() {
     return fetch(`${this._url}users/me`, {
-      headers: this._headers
+      headers: {
+        authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      }
     })
     .then(this._checkResponse);
   }
 
   getInitialCards() {
     return fetch(`${this._url}cards`, {
-      headers: this._headers
+      headers: {
+        authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      }
     })
     .then(this._checkResponse);
   }
@@ -28,7 +33,10 @@ class Api {
   setUserInfo(name, about) {
     return fetch(`${this._url}users/me`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         name: name,
         about: about
@@ -40,7 +48,10 @@ class Api {
   addCard(name, link) {
     return fetch(`${this._url}cards`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         name: name,
         link: link
@@ -52,7 +63,10 @@ class Api {
   deleteCard(id) {
     return fetch(`${this._url}cards/${id}`, {
       method: 'DELETE',
-      headers: this._headers,
+      headers: {
+        authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      },
     })
     .then(this._checkResponse);
   }
@@ -60,7 +74,10 @@ class Api {
   likeCard(id, method) {
     return fetch(`${this._url}cards/${id}/likes`, {
       method: method,
-      headers: this._headers,
+      headers: {
+        authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      },
     })
     .then(this._checkResponse);
   }
@@ -68,7 +85,10 @@ class Api {
   setUserAvatar(avatar) {
     return fetch(`${this._url}users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         avatar: avatar
       })
@@ -79,10 +99,6 @@ class Api {
 
 const api = new Api({
   url: 'https://api.andreymorogin.mesto.nomoredomains.rocks/',
-  headers: {
-		authorization: '869fd84c-8f33-41d3-abfa-9b98ecd7be14',
-    'Content-Type': 'application/json'
-  },
 });
 
 export default api;
