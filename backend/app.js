@@ -21,6 +21,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
 });
 
+app.use(cors);
 app.use(requestLogger);
 
 app.post('/signin', celebrate({
@@ -41,7 +42,6 @@ app.post('/signup', celebrate({
 }), createUser);
 
 app.use(auth);
-app.use(cors);
 
 app.use('/users', require('./routes/users'));
 app.use('/cards', require('./routes/cards'));
