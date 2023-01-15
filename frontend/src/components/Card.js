@@ -5,9 +5,9 @@ export default function Card({onCardClick, onCardLike, onCardDelete, card}) {
   const {link, name, likes, owner} = card;
   const currentUser = useContext(CurrentUserContext);
 
-  const isOwn = owner._id === currentUser._id;
+  const isOwn = owner === currentUser._id;
 
-  const isLiked = likes.some(i => i._id === currentUser._id);
+  const isLiked = likes.some(i => i === currentUser._id);
   const cardLikeButtonClassName = isLiked ? 'card__button button card__button_like' : 'card__button button';
 
 
