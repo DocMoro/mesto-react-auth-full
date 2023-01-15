@@ -1,3 +1,5 @@
+import { BASE_URL, ORIGIN_URL } from './utils';
+
 class Api {
   constructor(options) {
     this._url = options.url;
@@ -78,9 +80,10 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://api.andreymorogin.mesto.nomoredomains.rocks/',
+  url: BASE_URL,
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Origin': ORIGIN_URL
   },
 });
 

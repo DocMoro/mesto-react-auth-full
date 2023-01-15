@@ -1,10 +1,11 @@
-export const BASE_URL = 'https://api.andreymorogin.mesto.nomoredomains.rocks';
+import { BASE_URL, ORIGIN_URL } from './utils';
 
 export const register = ({password, email}) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Origin': ORIGIN_URL
     },
     body: JSON.stringify({password, email})
   })
@@ -14,7 +15,8 @@ export const authorize = ({password, email}) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Origin': ORIGIN_URL
     },
     body: JSON.stringify({password, email})
   })
@@ -25,6 +27,7 @@ export const getContent = (token) => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
+      'Origin': ORIGIN_URL,
       'Authorization': `Bearer ${token}`,
     }
   })

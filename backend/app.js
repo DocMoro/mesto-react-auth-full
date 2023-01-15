@@ -7,6 +7,7 @@ const { PORT = 3000 } = process.env;
 
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
+const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const Error404 = require('./errors/error-404');
@@ -40,6 +41,7 @@ app.post('/signup', celebrate({
 }), createUser);
 
 app.use(auth);
+app.use(cors);
 
 app.use('/users', require('./routes/users'));
 app.use('/cards', require('./routes/cards'));
