@@ -1,4 +1,4 @@
-import { BASE_URL } from './utils';
+import { BASE_URL, ORIGIN_URL } from './utils';
 
 class Api {
   constructor(options) {
@@ -82,7 +82,8 @@ class Api {
 const api = new Api({
   url: BASE_URL,
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Origin': ORIGIN_URL
   },
 });
 

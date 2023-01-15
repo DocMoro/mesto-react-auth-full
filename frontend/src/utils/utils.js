@@ -16,6 +16,7 @@ const formSelector = '.popup__form';
 
 const ESC = 27;
 const BASE_URL = 'https://api.andreymorogin.mesto.nomoredomains.rocks';
+const ORIGIN_URL = 'https://andreymorogin.mesto.nomoredomains.rocks';
 
 export {
   config,
@@ -26,5 +27,6 @@ export {
   inputInfoPopupEdit,
   buttonOpenPopupAdd,
   ESC,
-  BASE_URL
+  BASE_URL,
+  ORIGIN_URL
 }

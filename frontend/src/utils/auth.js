@@ -1,10 +1,11 @@
-import { BASE_URL } from './utils';
+import { BASE_URL, ORIGIN_URL } from './utils';
 
 export const register = ({password, email}) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Origin': ORIGIN_URL
     },
     body: JSON.stringify({password, email})
   })
@@ -14,7 +15,8 @@ export const authorize = ({password, email}) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Origin': ORIGIN_URL
     },
     body: JSON.stringify({password, email})
   })
@@ -25,7 +27,8 @@ export const getContent = (token) => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+      'Authorization': `Bearer ${token}`,
+      'Origin': ORIGIN_URL
     }
   })
   .then(checkResponse)
