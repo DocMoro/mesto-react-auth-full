@@ -13,7 +13,7 @@ class Api {
   getUserInfo() {
     return fetch(`${this._url}users/me`, {
       headers: {
-        authorization: localStorage.getItem('token'),
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       }
     })
@@ -23,7 +23,7 @@ class Api {
   getInitialCards() {
     return fetch(`${this._url}cards`, {
       headers: {
-        authorization: localStorage.getItem('token'),
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       }
     })
@@ -34,7 +34,7 @@ class Api {
     return fetch(`${this._url}users/me`, {
       method: 'PATCH',
       headers: {
-        authorization: localStorage.getItem('token'),
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -49,7 +49,7 @@ class Api {
     return fetch(`${this._url}cards`, {
       method: 'POST',
       headers: {
-        authorization: localStorage.getItem('token'),
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -64,7 +64,7 @@ class Api {
     return fetch(`${this._url}cards/${id}`, {
       method: 'DELETE',
       headers: {
-        authorization: localStorage.getItem('token'),
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       },
     })
@@ -75,7 +75,7 @@ class Api {
     return fetch(`${this._url}cards/${id}/likes`, {
       method: method,
       headers: {
-        authorization: localStorage.getItem('token'),
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       },
     })
@@ -86,7 +86,7 @@ class Api {
     return fetch(`${this._url}users/me/avatar`, {
       method: 'PATCH',
       headers: {
-        authorization: localStorage.getItem('token'),
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -98,7 +98,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://api.andreymorogin.mesto.nomoredomains.rocks/',
+  url: 'https://api.andreymorogin.mesto.nomoredomains.rocks/'
 });
 
 export default api;
