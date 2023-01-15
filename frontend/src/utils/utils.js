@@ -15,7 +15,6 @@ const buttonOpenPopupAdd = document.querySelector('.profile__add-button');
 const formSelector = '.popup__form';
 
 const ESC = 27;
-const BASE_URL = 'https://api.andreymorogin.mesto.nomoredomains.rocks';
 
 export {
   config,
@@ -25,6 +24,5 @@ export {
   inputNamePopupEdit,
   inputInfoPopupEdit,
   buttonOpenPopupAdd,
-  ESC,
-  BASE_URL
+  ESC
 }
