@@ -98,7 +98,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://api.andreymorogin.mesto.nomoredomains.rocks/'
+  url: 'https://api.andreymorogin.mesto.nomoredomainsrocks.ru/'
 });
 
 export default api;

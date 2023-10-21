@@ -6,5 +6,5 @@
 - Backend https://github.com/DocMoro/express-mesto-gha
 
 ## Ссылки на проект
-- Frontend https://andreymorogin.mesto.nomoredomains.rocks
-- Backend https://api.andreymorogin.mesto.nomoredomains.rocks
+- Frontend https://andreymorogin.mesto.nomoredomainsrocks.ru
+- Backend https://api.andreymorogin.mesto.nomoredomainsrocks.ru
